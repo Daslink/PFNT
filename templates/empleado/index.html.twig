@@ -1,47 +1,70 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
 {% block title %}Empleado index{% endblock %}
 
 {% block body %}
-    <h1>Empleado index</h1>
+<br>
+    <center><h1>Empleado</h1></center>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>FechaDeNacimiento</th>
-                <th>Rol</th>
-                <th>UsuarioIngreso</th>
-                <th>ContrasenaIngreso</th>
-                <th>IdentificadorJefe</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for empleado in empleados %}
-            <tr>
-                <td>{{ empleado.id }}</td>
-                <td>{{ empleado.nombre }}</td>
-                <td>{{ empleado.apellido }}</td>
-                <td>{{ empleado.fechaDeNacimiento ? empleado.fechaDeNacimiento|date('Y-m-d') : '' }}</td>
-                <td>{{ empleado.rol }}</td>
-                <td>{{ empleado.usuarioIngreso }}</td>
-                <td>{{ empleado.contrasenaIngreso }}</td>
-                <td>{{ empleado.identificadorJefe }}</td>
-                <td>
-                    <a href="{{ path('empleado_show', {'id': empleado.id}) }}">show</a>
-                    <a href="{{ path('empleado_edit', {'id': empleado.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <style> 
+        .contenedor{
+            margin: 75px;
+        }
 
-    <a href="{{ path('empleado_new') }}">Create new</a>
+        .crear{
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+
+    <div class="contenedor">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>FechaDeNacimiento</th>
+                    <th>Rol</th>
+                    <th>UsuarioIngreso</th>
+                    <th>ContrasenaIngreso</th>
+                    <th>IdentificadorJefe</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for empleado in empleados %}
+                <tr>
+                    <td>{{ empleado.id }}</td>
+                    <td>{{ empleado.nombre }}</td>
+                    <td>{{ empleado.apellido }}</td>
+                    <td>{{ empleado.fechaDeNacimiento ? empleado.fechaDeNacimiento|date('Y-m-d') : '' }}</td>
+                    <td>{{ empleado.rol }}</td>
+                    <td>{{ empleado.usuarioIngreso }}</td>
+                    <td>{{ empleado.contrasenaIngreso }}</td>
+                    <td>{{ empleado.identificadorJefe }}</td>
+                    <td>
+                        <a href="{{ path('empleado_edit', {'id': empleado.id}) }}">Editar</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('empleado_show', {'id': empleado.id}) }}">borrar</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="9">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <center><a href="{{ path('empleado_new') }}"><button class="crear">Crear un empleado</button></a></center>
 {% endblock %}

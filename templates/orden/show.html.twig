@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Orden{% endblock %}
+
+{% block body %}
+    <h1>Orden</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ orden.id }}</td>
+            </tr>
+            <tr>
+                <th>IdEmpleado</th>
+                <td>{{ orden.idEmpleado }}</td>
+            </tr>
+            <tr>
+                <th>IdProducto</th>
+                <td>{{ orden.idProducto }}</td>
+            </tr>
+            <tr>
+                <th>Puntos</th>
+                <td>{{ orden.puntos }}</td>
+            </tr>
+            <tr>
+                <th>Cantidad</th>
+                <td>{{ orden.cantidad }}</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td>{{ orden.estado }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <style>
+        .crear{
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+            height: 50px;
+            width: 200px;
+        }
+    </Style>
+
+    {{ include('orden/_delete_form.html.twig') }}
+    <center><a href="{{ path('orden_index') }}"><button class="crear">Volver a la lista</button></a></center>
+
+    
+{% endblock %}

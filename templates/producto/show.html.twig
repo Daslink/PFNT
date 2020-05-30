@@ -3,8 +3,8 @@
 {% block title %}Producto{% endblock %}
 
 {% block body %}
-    <h1>Producto</h1>
-
+    <center><h1>Producto</h1></center><br>
+    <center>
     <table class="table">
         <tbody>
             <tr>
@@ -29,10 +29,21 @@
             </tr>
         </tbody>
     </table>
+    </center>
 
-    <a href="{{ path('producto_index') }}">back to list</a>
+    <style>
+        .crear{
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+            height: 50px;
+            width: 200px;
+        }
+    </Style>
+    
 
-    <a href="{{ path('producto_edit', {'id': producto.id}) }}">edit</a>
 
     {{ include('producto/_delete_form.html.twig') }}
+    <center><a href="{{ path('producto_index') }}"><button class="crear">Volver a la lista</button></a></center>
+
+   
 {% endblock %}

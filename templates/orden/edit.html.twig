@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Orden{% endblock %}
+
+{% block body %}
+    
+    <br>
+    <center><h1>Editar Orden</h1></center><br>
+    <style>
+        .crear{
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+            height: 50px;
+            width: 200px;
+        }
+    </Style>
+    <center>
+    { include('orden/_form.html.twig', {'button_label': 'Actualizar'}) }}
+    </center>
+
+    <center><a href="{{ path('orden_index') }}"<button class="crear">Volver a la lista</button></a>
+
+{% endblock %}

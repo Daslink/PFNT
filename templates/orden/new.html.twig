@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Orden{% endblock %}
+
+{% block body %}
+    <style>
+        .crear{
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+    /*<h1>Create new Orden</h1>*/
+
+    {{ include('orden/_form.html.twig') }}
+
+    <a href="{{ path('orden_index') }}"><button class="crear">Volver a la lista</button></a>
+{% endblock %}

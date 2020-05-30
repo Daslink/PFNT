@@ -3,9 +3,18 @@
 {% block title %}New Producto{% endblock %}
 
 {% block body %}
-    <h1>Create new Producto</h1>
+     <style>
+        .crear{
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+    <br><center><h1>Crear nuevo Producto</h1></center><br>
 
-    {{ include('producto/_form.html.twig') }}
+    <center>{{ include('producto/_form.html.twig') }}</center><br>
 
-    <a href="{{ path('producto_index') }}">back to list</a>
+    <center><a href="{{ path('producto_index') }}"><button class="crear">Volver a la lista</button></a></center>
+    
 {% endblock %}

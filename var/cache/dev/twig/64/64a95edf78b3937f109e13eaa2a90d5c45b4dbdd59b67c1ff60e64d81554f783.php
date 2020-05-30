@@ -45,8 +45,8 @@ class __TwigTemplate_35d6b84df424cf84ed4094f6ddad2f25c75a1c958a58a3c4145e9af1af6
     ";
         // line 2
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 2, $this->source); })()), 'widget');
-        echo "
-    <button class=\"btn\">";
+        echo "<br>
+    <button class=\"crear\">";
         // line 3
         echo twig_escape_filter($this->env, (((isset($context["button_label"]) || array_key_exists("button_label", $context))) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 3, $this->source); })()), "Save")) : ("Save")), "html", null, true);
         echo "</button>
@@ -81,8 +81,8 @@ class __TwigTemplate_35d6b84df424cf84ed4094f6ddad2f25c75a1c958a58a3c4145e9af1af6
     public function getSourceContext()
     {
         return new Source("{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class=\"btn\">{{ button_label|default('Save') }}</button>
+    {{ form_widget(form) }}<br>
+    <button class=\"crear\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
 ", "empleado/_form.html.twig", "C:\\xampp\\htdocs\\PFNT\\templates\\empleado\\_form.html.twig");
     }

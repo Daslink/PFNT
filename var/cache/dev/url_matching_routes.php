@@ -15,10 +15,16 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/empleado' => [[['_route' => 'empleado_index', '_controller' => 'App\\Controller\\EmpleadoController::index'], null, ['GET' => 0], null, true, false, null]],
         '/empleado/new' => [[['_route' => 'empleado_new', '_controller' => 'App\\Controller\\EmpleadoController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/home' => [[['_route' => 'home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/orden' => [[['_route' => 'orden_index', '_controller' => 'App\\Controller\\OrdenController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/orden/new' => [[['_route' => 'orden_new', '_controller' => 'App\\Controller\\OrdenController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/periodo' => [[['_route' => 'periodo_index', '_controller' => 'App\\Controller\\PeriodoController::index'], null, ['GET' => 0], null, true, false, null]],
         '/periodo/new' => [[['_route' => 'periodo_new', '_controller' => 'App\\Controller\\PeriodoController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/producto' => [[['_route' => 'producto_index', '_controller' => 'App\\Controller\\ProductoController::index'], null, ['GET' => 0], null, true, false, null]],
         '/producto/new' => [[['_route' => 'producto_new', '_controller' => 'App\\Controller\\ProductoController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\RegisterController::index'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -42,16 +48,21 @@ return [
                     .'|/edit(*:203)'
                     .'|(*:211)'
                 .')'
+                .'|/orden/([^/]++)(?'
+                    .'|(*:238)'
+                    .'|/edit(*:251)'
+                    .'|(*:259)'
+                .')'
                 .'|/p(?'
                     .'|eriodo/([^/]++)(?'
-                        .'|(*:243)'
-                        .'|/edit(*:256)'
-                        .'|(*:264)'
+                        .'|(*:291)'
+                        .'|/edit(*:304)'
+                        .'|(*:312)'
                     .')'
                     .'|roducto/([^/]++)(?'
-                        .'|(*:292)'
-                        .'|/edit(*:305)'
-                        .'|(*:313)'
+                        .'|(*:340)'
+                        .'|/edit(*:353)'
+                        .'|(*:361)'
                     .')'
                 .')'
             .')/?$}sDu',
@@ -67,12 +78,15 @@ return [
         190 => [[['_route' => 'empleado_show', '_controller' => 'App\\Controller\\EmpleadoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
         203 => [[['_route' => 'empleado_edit', '_controller' => 'App\\Controller\\EmpleadoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
         211 => [[['_route' => 'empleado_delete', '_controller' => 'App\\Controller\\EmpleadoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        243 => [[['_route' => 'periodo_show', '_controller' => 'App\\Controller\\PeriodoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        256 => [[['_route' => 'periodo_edit', '_controller' => 'App\\Controller\\PeriodoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        264 => [[['_route' => 'periodo_delete', '_controller' => 'App\\Controller\\PeriodoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
-        292 => [[['_route' => 'producto_show', '_controller' => 'App\\Controller\\ProductoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        305 => [[['_route' => 'producto_edit', '_controller' => 'App\\Controller\\ProductoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        313 => [
+        238 => [[['_route' => 'orden_show', '_controller' => 'App\\Controller\\OrdenController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        251 => [[['_route' => 'orden_edit', '_controller' => 'App\\Controller\\OrdenController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        259 => [[['_route' => 'orden_delete', '_controller' => 'App\\Controller\\OrdenController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        291 => [[['_route' => 'periodo_show', '_controller' => 'App\\Controller\\PeriodoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        304 => [[['_route' => 'periodo_edit', '_controller' => 'App\\Controller\\PeriodoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        312 => [[['_route' => 'periodo_delete', '_controller' => 'App\\Controller\\PeriodoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null]],
+        340 => [[['_route' => 'producto_show', '_controller' => 'App\\Controller\\ProductoController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        353 => [[['_route' => 'producto_edit', '_controller' => 'App\\Controller\\ProductoController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        361 => [
             [['_route' => 'producto_delete', '_controller' => 'App\\Controller\\ProductoController::delete'], ['id'], ['DELETE' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

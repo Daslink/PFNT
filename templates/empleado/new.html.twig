@@ -3,9 +3,18 @@
 {% block title %}New Empleado{% endblock %}
 
 {% block body %}
-    <h1>Create new Empleado</h1>
 
-    {{ include('empleado/_form.html.twig') }}
+    <style>
+        .crear{
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+    <br><center><h1>Crear nuevo Empleado</h1></center><br>
 
-    <a href="{{ path('empleado_index') }}">back to list</a>
+    <center>{{ include('empleado/_form.html.twig') }}</center><br>
+
+    <center><a href="{{ path('empleado_index') }}"><button class="crear">Volver a la lista</button></a></center>
 {% endblock %}

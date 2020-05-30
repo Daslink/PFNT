@@ -3,9 +3,76 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        {% block stylesheets %}
+            <link href="{{ asset('..\public\style.css') }}" rel="stylesheet">
+        {% endblock %}
     </head>
     <body>
+        <style>
+            #menu ul li a{
+            padding: 13px 85px;
+            }   
+        </style>
+        <div class="jumbotron text-center">
+            <img src="https://static.rfstat.com/renderforest/images/v2/logo-homepage/flat_3.png" class="rounded" alt="Cinque Terre" width="304" height="236"> 
+            <h1>Hernan Dario Ramos</h1>
+            <h1>Ian Nicolas Molano Casas</h1>
+        </div>
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="menu">
+                <!-- Brand/logo -->                
+                <!-- Links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            EMPLEADOS
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../../empleado/new">CREAR</a>
+                            <a class="dropdown-item" href="../../empleado">CONSULTAR</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            PRODUCTOS
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../../producto/new">CREAR</a>
+                            <a class="dropdown-item" href="../../producto">CONSULTAR</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            PERIODOS
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../../periodo/new">CREAR</a>
+                            <a class="dropdown-item" href="../../periodo">CONSULTAR</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            ÓRDENES
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../../orden">CONSULTAR</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            PUNTOS
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../../producto/new">PROCESAR</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

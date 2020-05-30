@@ -85,17 +85,26 @@ class __TwigTemplate_6ac61d11ed407d8a3bc5d5031dc34d95b1c8336cd79d9c27c546b3c2b85
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Empleado</h1>
-
-    ";
-        // line 8
-        echo twig_include($this->env, $context, "empleado/_form.html.twig");
         echo "
+    <style>
+        .crear{
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+    <br><center><h1>Crear nuevo Empleado</h1></center><br>
 
-    <a href=\"";
-        // line 10
+    <center>";
+        // line 17
+        echo twig_include($this->env, $context, "empleado/_form.html.twig");
+        echo "</center><br>
+
+    <center><a href=\"";
+        // line 19
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("empleado_index");
-        echo "\">back to list</a>
+        echo "\"><button class=\"crear\">Volver a la lista</button></a></center>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -117,7 +126,7 @@ class __TwigTemplate_6ac61d11ed407d8a3bc5d5031dc34d95b1c8336cd79d9c27c546b3c2b85
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  106 => 19,  101 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +136,20 @@ class __TwigTemplate_6ac61d11ed407d8a3bc5d5031dc34d95b1c8336cd79d9c27c546b3c2b85
 {% block title %}New Empleado{% endblock %}
 
 {% block body %}
-    <h1>Create new Empleado</h1>
 
-    {{ include('empleado/_form.html.twig') }}
+    <style>
+        .crear{
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+    <br><center><h1>Crear nuevo Empleado</h1></center><br>
 
-    <a href=\"{{ path('empleado_index') }}\">back to list</a>
+    <center>{{ include('empleado/_form.html.twig') }}</center><br>
+
+    <center><a href=\"{{ path('empleado_index') }}\"><button class=\"crear\">Volver a la lista</button></a></center>
 {% endblock %}
 ", "empleado/new.html.twig", "C:\\xampp\\htdocs\\PFNT\\templates\\empleado\\new.html.twig");
     }

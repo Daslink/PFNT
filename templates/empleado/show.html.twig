@@ -3,7 +3,8 @@
 {% block title %}Empleado{% endblock %}
 
 {% block body %}
-    <h1>Empleado</h1>
+    <center><h1>Empleado</h1></center><br>
+    <center>
 
     <table class="table">
         <tbody>
@@ -41,10 +42,19 @@
             </tr>
         </tbody>
     </table>
+    </center>
 
-    <a href="{{ path('empleado_index') }}">back to list</a>
+    <style>
+        .crear{
+            background-color: #343a40;
+            color: rgba(255,255,255,.5);
+            height: 50px;
+            width: 200px;
+        }
+    </Style>
+    
 
-    <a href="{{ path('empleado_edit', {'id': empleado.id}) }}">edit</a>
 
     {{ include('empleado/_delete_form.html.twig') }}
+    <center><a href="{{ path('empleado_index') }}"><button class="crear">Volver a la lista</button></a></center>
 {% endblock %}
